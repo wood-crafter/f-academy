@@ -1,10 +1,38 @@
 import './App.css';
+import { Authentication, Home } from '../src/views'
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
+
+import { RequireAuth } from './components'
+import { AuthProvider } from './providers/use-auth'
+
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/authentication" element={<Authentication />} />
+      <Route path="/" element={(
+          <RequireAuth>
+            <Home></Home>
+          </RequireAuth>
+        )} />
+    </Routes>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-    </div>
-  );
+    <Router>
+      <div className='App'>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </div>
+    </Router>
+  )
 }
 
 export default App;
