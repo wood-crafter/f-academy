@@ -7,5 +7,5 @@ export function RequireAuth ({ children }) {
 
   return user
     ? children
-    : <Navigate to="/login" state={{ from: location }} replace />
+    : <Navigate to="/authentication" state={{ from: location }} replace />
 }
