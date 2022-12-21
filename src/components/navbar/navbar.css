@@ -8,6 +8,7 @@
   height: 3rem;
   justify-content: center;
   align-items: center;
+  background-color: #86efac;
 }
 
 .content {
@@ -41,9 +42,9 @@ li {
 }
 
 li:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
